@@ -1,6 +1,6 @@
 const allowedOrigins = [
-    'http://localhost:3000',
     "https://www.dandrepairshop.com",
+    "https://mern-stark-full-tutorial.onrender.com/",
     "http://dandrepairshop.com"
 ]
 
