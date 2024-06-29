@@ -39,6 +39,12 @@ const DashHeader = () => {
     const onNotesClicked = () => navigate('/dash/notes')
     const onUsersClicked = () => navigate('/dash/users')
 
+    const onLogoutClicked = () => {
+        sendLogout().unwrap()
+            .then(() => navigate('/'))
+            .catch(console.error)
+    }
+
     let dashClass = null
     if (!DASH_REGEX.test(pathname) && !NOTES_REGEX.test(pathname) && !USERS_REGEX.test(pathname)) {
         dashClass = "dash-header__container--small"
@@ -102,7 +108,7 @@ const DashHeader = () => {
         <button
             className="icon-button"
             title="Logout"
-            onClick={sendLogout}
+            onClick={onLogoutClicked}
         >
             <FontAwesomeIcon icon={faRightFromBracket} />
         </button>
